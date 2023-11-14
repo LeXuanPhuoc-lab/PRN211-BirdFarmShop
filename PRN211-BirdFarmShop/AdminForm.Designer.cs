@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             groupBox1 = new GroupBox();
             dtg_Account = new DataGridView();
             groupBox2 = new GroupBox();
@@ -99,18 +100,22 @@
             txt_Search.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Search.Location = new Point(6, 20);
             txt_Search.Name = "txt_Search";
-            txt_Search.Size = new Size(897, 34);
+            txt_Search.Size = new Size(874, 34);
             txt_Search.TabIndex = 1;
             // 
             // btn_Search
             // 
+            btn_Search.BackColor = SystemColors.Control;
             btn_Search.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Search.Location = new Point(909, 17);
+            btn_Search.Image = Properties.Resources.icons_search_19;
+            btn_Search.Location = new Point(898, 17);
             btn_Search.Name = "btn_Search";
-            btn_Search.Size = new Size(112, 41);
+            btn_Search.RightToLeft = RightToLeft.No;
+            btn_Search.Size = new Size(123, 37);
             btn_Search.TabIndex = 0;
             btn_Search.Text = "Tìm Kiếm";
-            btn_Search.UseVisualStyleBackColor = true;
+            btn_Search.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Search.UseVisualStyleBackColor = false;
             btn_Search.Click += btn_Search_Click;
             // 
             // groupBox3
@@ -144,16 +149,16 @@
             // 
             dt_Birthday.CalendarFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dt_Birthday.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dt_Birthday.Location = new Point(651, 195);
+            dt_Birthday.Location = new Point(663, 195);
             dt_Birthday.Name = "dt_Birthday";
-            dt_Birthday.Size = new Size(358, 34);
+            dt_Birthday.Size = new Size(322, 34);
             dt_Birthday.TabIndex = 17;
             // 
             // cbx_Role
             // 
             cbx_Role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbx_Role.FormattingEnabled = true;
-            cbx_Role.Location = new Point(651, 241);
+            cbx_Role.Location = new Point(663, 241);
             cbx_Role.Name = "cbx_Role";
             cbx_Role.Size = new Size(182, 36);
             cbx_Role.TabIndex = 16;
@@ -164,7 +169,7 @@
             mtb_Phone.Location = new Point(183, 195);
             mtb_Phone.Mask = "(999) 000-0000";
             mtb_Phone.Name = "mtb_Phone";
-            mtb_Phone.Size = new Size(356, 34);
+            mtb_Phone.Size = new Size(322, 34);
             mtb_Phone.TabIndex = 15;
             // 
             // txt_Gender
@@ -172,23 +177,23 @@
             txt_Gender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Gender.Location = new Point(181, 243);
             txt_Gender.Name = "txt_Gender";
-            txt_Gender.Size = new Size(358, 34);
+            txt_Gender.Size = new Size(324, 34);
             txt_Gender.TabIndex = 14;
             // 
             // txt_City
             // 
             txt_City.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_City.Location = new Point(651, 145);
+            txt_City.Location = new Point(663, 142);
             txt_City.Name = "txt_City";
-            txt_City.Size = new Size(358, 34);
+            txt_City.Size = new Size(322, 34);
             txt_City.TabIndex = 13;
             // 
             // txt_Password
             // 
             txt_Password.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Password.Location = new Point(651, 93);
+            txt_Password.Location = new Point(663, 90);
             txt_Password.Name = "txt_Password";
-            txt_Password.Size = new Size(358, 34);
+            txt_Password.Size = new Size(322, 34);
             txt_Password.TabIndex = 12;
             // 
             // txt_Street
@@ -196,7 +201,7 @@
             txt_Street.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Street.Location = new Point(181, 145);
             txt_Street.Name = "txt_Street";
-            txt_Street.Size = new Size(358, 34);
+            txt_Street.Size = new Size(324, 34);
             txt_Street.TabIndex = 11;
             // 
             // txt_FullName
@@ -204,7 +209,7 @@
             txt_FullName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txt_FullName.Location = new Point(181, 41);
             txt_FullName.Name = "txt_FullName";
-            txt_FullName.Size = new Size(358, 34);
+            txt_FullName.Size = new Size(324, 34);
             txt_FullName.TabIndex = 10;
             // 
             // txt_Email
@@ -212,7 +217,7 @@
             txt_Email.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Email.Location = new Point(181, 93);
             txt_Email.Name = "txt_Email";
-            txt_Email.Size = new Size(358, 34);
+            txt_Email.Size = new Size(324, 34);
             txt_Email.TabIndex = 9;
             // 
             // label9
@@ -299,11 +304,14 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ImageAlign = ContentAlignment.MiddleLeft;
             label1.Location = new Point(40, 41);
             label1.Name = "label1";
+            label1.RightToLeft = RightToLeft.No;
             label1.Size = new Size(76, 28);
             label1.TabIndex = 0;
             label1.Text = "Họ Tên:";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // groupBox4
             // 
@@ -320,45 +328,57 @@
             // btn_Close
             // 
             btn_Close.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Close.Location = new Point(909, 19);
+            btn_Close.Image = Properties.Resources.icons8_export_20;
+            btn_Close.Location = new Point(882, 19);
             btn_Close.Name = "btn_Close";
-            btn_Close.Size = new Size(112, 41);
+            btn_Close.Size = new Size(139, 41);
             btn_Close.TabIndex = 4;
             btn_Close.Text = "Đăng Xuất";
+            btn_Close.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Close.UseVisualStyleBackColor = true;
             btn_Close.Click += btn_Close_Click;
             // 
             // btn_Delete
             // 
+            btn_Delete.BackColor = Color.MistyRose;
             btn_Delete.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Delete.Location = new Point(269, 18);
+            btn_Delete.ForeColor = Color.Black;
+            btn_Delete.Image = Properties.Resources.icons8_delete_19;
+            btn_Delete.Location = new Point(300, 19);
             btn_Delete.Name = "btn_Delete";
-            btn_Delete.Size = new Size(112, 41);
+            btn_Delete.Size = new Size(112, 40);
             btn_Delete.TabIndex = 3;
             btn_Delete.Text = "Xóa";
-            btn_Delete.UseVisualStyleBackColor = true;
+            btn_Delete.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Delete.UseVisualStyleBackColor = false;
             btn_Delete.Click += btn_Delete_Click;
             // 
             // btn_Update
             // 
+            btn_Update.BackColor = Color.FromArgb(255, 255, 192);
             btn_Update.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Update.Location = new Point(137, 18);
+            btn_Update.Image = (Image)resources.GetObject("btn_Update.Image");
+            btn_Update.Location = new Point(137, 19);
             btn_Update.Name = "btn_Update";
-            btn_Update.Size = new Size(112, 41);
+            btn_Update.Size = new Size(141, 40);
             btn_Update.TabIndex = 2;
             btn_Update.Text = "Cập Nhật";
-            btn_Update.UseVisualStyleBackColor = true;
+            btn_Update.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Update.UseVisualStyleBackColor = false;
             btn_Update.Click += btn_Update_Click;
             // 
             // btn_Add
             // 
+            btn_Add.BackColor = Color.FromArgb(255, 255, 192);
             btn_Add.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Add.Image = Properties.Resources.icons8_add_button_19;
             btn_Add.Location = new Point(6, 18);
             btn_Add.Name = "btn_Add";
             btn_Add.Size = new Size(112, 41);
             btn_Add.TabIndex = 1;
             btn_Add.Text = "Thêm";
-            btn_Add.UseVisualStyleBackColor = true;
+            btn_Add.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Add.UseVisualStyleBackColor = false;
             btn_Add.Click += btn_Add_Click;
             // 
             // AdminForm
