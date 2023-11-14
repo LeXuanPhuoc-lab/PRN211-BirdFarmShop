@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using BFShopBussinessObjects.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
 
-namespace BFShopBussinessObjects.Entities
+namespace BFShopDAO
 {
     public partial class Bird_Farm_Shop_PRNContext : DbContext
     {
@@ -117,6 +118,18 @@ namespace BFShopBussinessObjects.Entities
                 entity.Property(e => e.CreateDate)
                     .HasColumnType("datetime")
                     .HasColumnName("create_date");
+
+                entity.Property(e => e.StaffName)
+                    .HasMaxLength(155)
+                    .HasColumnName("StaffName");
+
+                entity.Property(e => e.CustomerName)
+                    .HasMaxLength(155)
+                    .HasColumnName("customerName");
+
+                entity.Property(e => e.CustomerPhone)
+                    .HasMaxLength(20)
+                    .HasColumnName("customerPhone");
 
                 entity.Property(e => e.Email)
                     .HasMaxLength(155)

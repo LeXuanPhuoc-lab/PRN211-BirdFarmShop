@@ -1,4 +1,4 @@
-﻿using BFShopBussinessObjects.Entities;
+using BFShopBussinessObjects.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,6 +50,39 @@ namespace BFShopDAO
 
         }
 
+        public bool AddNewOrder(Order order)
+        {
+            using (var context = new Bird_Farm_Shop_PRNContext())
+            {
+                context.Orders.Add(order);
+                return context.SaveChanges() > 0;
+            }
+        }
+
+        public Order Search(string orderID)
+        {
+            if (string.IsNullOrEmpty(orderID))
+            {
+                return null; 
+            }
+
+            using (var context = new Bird_Farm_Shop_PRNContext())
+            {
+                return context.Orders.SingleOrDefault(m => m.OrderId.Equals(orderID));
+            }
+        }
+
+        public bool DeleteOrder(string orderID)
+        {
+            using (var context = new Bird_Farm_Shop_PRNContext())
+            {
+                var order = context.Orders.SingleOrDefault(m => m.OrderId.Equals(orderID));
+                if (order is null) return false;
+
+                context.Orders.Remove(order);
+                return context.SaveChanges() > 0;
+            }
+        }
 
     }
 }
