@@ -55,15 +55,15 @@ namespace PRN211_BirdFarmShop
         {
 
         }
-
+      
         private void txt_SoLuong_TextChanged(object sender, EventArgs e)
         {
-            if (BFShopUtils.ContainsLettersOrSpecialCharacters(txt_SoLuong.Text.ToString()))
-            {
-                MessageBox.Show("Phải nhập chữ số");
-                txt_SoLuong.Text = "1";
-                return;
-            }
+            //if (BFShopUtils.ContainsLettersOrSpecialCharacters(txt_SoLuong.Text.ToString()))
+            //{
+            //    MessageBox.Show("Phải nhập chữ số");
+            //    txt_SoLuong.Text = "1";
+            //    return;
+            //}
             int sl;
             float dg, gg, tt;
             sl = txt_SoLuong.Text == "" ? 0 : Int32.Parse(txt_SoLuong.Text);
@@ -76,12 +76,12 @@ namespace PRN211_BirdFarmShop
 
         private void txt_GiamGia_TextChanged(object sender, EventArgs e)
         {
-            if (BFShopUtils.ContainsLettersOrSpecialCharacters(txt_GiamGia.Text))
-            {
-                MessageBox.Show("Phải nhập chữ số");
-                txt_GiamGia.Text = "0";
-                return;
-            }
+            //if (BFShopUtils.ContainsLettersOrSpecialCharacters(txt_GiamGia.Text))
+            //{
+            //    MessageBox.Show("Phải nhập chữ số");
+            //    txt_GiamGia.Text = "0";
+            //    return;
+            //}
             int sl;
             float dg, gg, tt;
             sl = txt_SoLuong.Text == "" ? 0 : Int32.Parse(txt_SoLuong.Text);
@@ -116,11 +116,11 @@ namespace PRN211_BirdFarmShop
 
         private void btn_ThemSanPham_Click(object sender, EventArgs e)
         {
-            if (orderDetailList is not null && BFShopUtils.CheckProductIDExist(cbx_MaHang.SelectedValue.ToString(), orderDetailList))
-            {
-                MessageBox.Show("Mã hàng này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            //if (orderDetailList is not null && BFShopUtils.CheckProductIDExist(cbx_MaHang.SelectedValue.ToString(), orderDetailList))
+            //{
+            //    MessageBox.Show("Mã hàng này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
             OrderDetail orderDetail = new OrderDetail();
             orderDetail.Product = new Product();
             orderDetail.OrderId = txt_MaHoaDon.Text.ToString();
@@ -128,7 +128,7 @@ namespace PRN211_BirdFarmShop
             orderDetail.Product.ProductName = txt_TenHang.Text.ToString();
             orderDetail.Quantity = Convert.ToInt32(txt_SoLuong.Text.ToString());
             orderDetail.Price = Convert.ToDouble(txt_DonGia.Text.ToString());
-            orderDetail.Total = Convert.ToDouble(txt_ThanhTien.Text.ToString());
+            orderDetail.Total = Convert.ToInt32(txt_ThanhTien.Text.ToString());
             orderDetailList.Add(orderDetail);
             loadDataGridView();
             totalOrder += orderDetail.Total;
