@@ -167,7 +167,7 @@ namespace BFShopDAO
             {
                 if (String.IsNullOrEmpty(searchValue))
                 {
-                    return context.Accounts.Include(a => a.Role).ToList();
+                    return context.Accounts.Include(a => a.Role).Where(x => x.Role.RoleDesc.Equals(RoleDecs)).ToList();
                 }
 
                 // filter 

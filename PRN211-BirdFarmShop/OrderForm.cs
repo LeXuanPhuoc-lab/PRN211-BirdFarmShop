@@ -139,7 +139,7 @@ namespace PRN211_BirdFarmShop
         {
 
         }
-      
+
         private void txt_SoLuong_TextChanged(object sender, EventArgs e)
         {
             //if (BFShopUtils.ContainsLettersOrSpecialCharacters(txt_SoLuong.Text.ToString()))
