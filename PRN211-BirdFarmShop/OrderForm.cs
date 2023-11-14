@@ -139,15 +139,15 @@ namespace PRN211_BirdFarmShop
         {
 
         }
-
+      
         private void txt_SoLuong_TextChanged(object sender, EventArgs e)
         {
-            if (BFShopUtils.ContainsLettersOrSpecialCharacters(txt_SoLuong.Text.ToString()))
-            {
-                MessageBox.Show("Phải nhập chữ số");
-                txt_SoLuong.Text = "1";
-                return;
-            }
+            //if (BFShopUtils.ContainsLettersOrSpecialCharacters(txt_SoLuong.Text.ToString()))
+            //{
+            //    MessageBox.Show("Phải nhập chữ số");
+            //    txt_SoLuong.Text = "1";
+            //    return;
+            //}
             int sl;
             float dg, tt;
             sl = txt_SoLuong.Text == "" ? 0 : Int32.Parse(txt_SoLuong.Text);
@@ -237,7 +237,7 @@ namespace PRN211_BirdFarmShop
             orderDetail.Product.Category.CategoryName = txt_GiongLoai.Text.ToString();
             orderDetail.Quantity = qtyBuy;
             orderDetail.Price = Convert.ToDouble(txt_DonGia.Text.ToString());
-            orderDetail.Total = Convert.ToDouble(txt_ThanhTien.Text.ToString());
+            orderDetail.Total = Convert.ToInt32(txt_ThanhTien.Text.ToString());
             orderDetailList.Add(orderDetail);
             loadOrderDetailListView();
             totalOrder += orderDetail.Total;

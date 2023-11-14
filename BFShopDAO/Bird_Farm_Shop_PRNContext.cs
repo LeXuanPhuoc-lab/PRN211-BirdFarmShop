@@ -29,7 +29,8 @@ namespace BFShopDAO
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(GetConnectionStrings());
+                optionsBuilder.UseSqlServer("Server=(local);Database=Bird_Farm_Shop_PRN;Uid=sa;Pwd=12345;TrustServerCertificate=True")
+                    ;
             }
         }
 

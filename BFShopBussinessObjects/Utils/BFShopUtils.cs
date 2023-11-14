@@ -126,6 +126,16 @@ namespace BFShopBussinessObjects
             return false;
         }
 
+        public static bool isPhoneNum(string phoneNum) 
+        {
+            Regex regex = new Regex("^0?\\d{9,10}$");
+            return regex.IsMatch(phoneNum);
+        }
+        public static bool NotIncludeSpecialCharacter(string inputString) 
+        {
+            Regex regex = new Regex("^[a-zA-Z0-9 ]*$");
+            return regex.IsMatch(inputString);
+        }
         public static AppSettings ConfigureAppSettings()
         {
             IConfiguration configuration = new ConfigurationBuilder()
