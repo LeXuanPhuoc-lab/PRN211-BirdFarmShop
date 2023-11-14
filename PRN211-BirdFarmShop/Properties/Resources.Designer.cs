@@ -93,6 +93,26 @@ namespace PRN211_BirdFarmShop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_account_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-account-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_account_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-account-501", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_button_19 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-button-19", resourceCulture);
