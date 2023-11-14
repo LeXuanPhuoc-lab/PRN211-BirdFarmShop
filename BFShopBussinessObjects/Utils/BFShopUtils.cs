@@ -83,12 +83,22 @@ namespace BFShopBussinessObjects
                 return false;
         }
 
+        public static bool IsValidPattern(string value, string pattern)
+        {
+            var regex = new Regex(pattern);
+            return regex.IsMatch(value);
+        }
+
         public static bool IsNotNumericString(string value)
         {
-            var pattern = new Regex(@"^[a-zA-Z ]+$");
+            var pattern = new Regex(@"^([^0-9]*)$");
             return pattern.IsMatch(value);
         }
 
+        public static double MoneyFormatToDouble(string value)
+        {
+            return Convert.ToDouble(value.Replace(".", ""));
+        }
         public static int CalculateAge(DateTime dateOfBirth)
         {
             int age = 0;
@@ -115,6 +125,33 @@ namespace BFShopBussinessObjects
             return false;
         }
 
+        public static bool ContainsLettersOrSpecialCharacters(string input)
+        {
+            return Regex.IsMatch(input, @"[\D]");
+        }
+
+        public static bool CheckProductIDExist(string proID, List<OrderDetail> odList)
+        {
+            foreach (var item in odList)
+            {
+                if (item.ProductId.Equals(proID))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool isPhoneNum(string phoneNum) 
+        {
+            Regex regex = new Regex("^0?\\d{9,10}$");
+            return regex.IsMatch(phoneNum);
+        }
+        public static bool NotIncludeSpecialCharacter(string inputString) 
+        {
+            Regex regex = new Regex("^[a-zA-Z0-9 ]*$");
+            return regex.IsMatch(inputString);
+        }
         public static AppSettings ConfigureAppSettings()
         {
             IConfiguration configuration = new ConfigurationBuilder()
@@ -124,7 +161,5 @@ namespace BFShopBussinessObjects
 
             return configuration.GetSection("AppSettings").Get<AppSettings>();
         }
-
-
     }
 }

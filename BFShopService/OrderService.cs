@@ -1,4 +1,5 @@
-﻿using BFShopRepository;
+﻿using BFShopBussinessObjects.Entities;
+using BFShopRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,10 @@ namespace BFShopService
             _orderRepository = new OrderRepository();
         }
 
+        public bool AddNewOrder(Order order) => _orderRepository.AddNewOrder(order);
         public string createOrderID() => _orderRepository.createOrderID();
+        public bool DeleteOrder(string orderID) => _orderRepository.DeleteOrder(orderID);
+        public Order Search(string orderID) => _orderRepository.Search(orderID);
 
     }
 }
